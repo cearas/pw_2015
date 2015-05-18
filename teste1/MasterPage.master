@@ -1,0 +1,29 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="css_MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>MobilVet</title>
+    <link href="http://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+    <link href="~/css/Style.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/fonts.css" rel="stylesheet" type="text/css" />
+</head>
+<body>   
+    <div id="wrapper3">
+        <form id="form1" runat="server">
+            <table style="width:100%"><tr><td style="background-color:orange;text-align:center">
+                <asp:LoginStatus ID="LoginStatus1" runat="server" Font-Overline="false" ForeColor="Black"/>
+                <asp:LoginName ID="LoginName1" runat="server" />
+                                          </td></tr></table>
+            <asp:ContentPlaceHolder id="HEAD" runat="server">
+            </asp:ContentPlaceHolder>
+            <asp:ContentPlaceHolder id="Main" runat="server">
+            </asp:ContentPlaceHolder>
+        </form>
+    </div>
+    <div id="copyright" class="container">
+	    <p>&copy; Ricardo Dinis All rights reserved. | Design by Ricardo Dinis.</p>
+    </div>
+</body>
+</html>
