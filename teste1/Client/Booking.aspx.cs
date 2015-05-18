@@ -104,6 +104,7 @@ public partial class Client_Booking : System.Web.UI.Page
             lbl.Text = "Tem de inserir um animal!";
 
     }
+
     protected void droplist_type_SelectedIndexChanged(object sender, EventArgs e)
     {
         droplist_specialties.Visible = true;
@@ -138,10 +139,10 @@ public partial class Client_Booking : System.Web.UI.Page
 
 
     }
+    
+    
     protected void calendar_appoint_SelectionChanged(object sender, EventArgs e)
     {
-        
-
         int iduser = get_UserID();
 
         SqlConnection cnn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
