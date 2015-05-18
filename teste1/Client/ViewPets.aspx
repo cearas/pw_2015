@@ -32,11 +32,11 @@
             <br />
 
             <asp:GridView 
-            ID="PetGridView" Font-Names="Arial" Font-Size="Smaller" 
+            ID="gv" Visible="true" Font-Names="Arial" Font-Size="Smaller" 
             AutoGenerateColumns="False" 
             AutoGenerateEditButton="True" 
             DataSourceID="pet"
-            runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AllowPaging="True" >
+            runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AllowPaging="True" DataKeyNames="DrawingID" >
             
             <AlternatingRowStyle BackColor="White" />
             
@@ -49,13 +49,17 @@
             
                 <%--DATA BOUND COLUMNS--%>
                 <asp:CommandField ShowDeleteButton="True" />
-                 <asp:BoundField DataField="pet_name_" HeaderText="pet_name_" SortExpression="pet_name_" />
-                 <asp:BoundField DataField="pet_age" HeaderText="pet_age" SortExpression="pet_age" />
-                 <asp:BoundField DataField="pet_race" HeaderText="pet_race" SortExpression="pet_race" />
-                 <asp:BoundField DataField="pet_gender" HeaderText="pet_gender" SortExpression="pet_gender" />
-                       
-                <asp:ButtonField CommandName="Select" Text="Info" />
-                       
+                 <asp:BoundField DataField="pet_name_" HeaderText="Name" SortExpression="pet_name_" />
+                 <asp:BoundField DataField="pet_age" HeaderText="Age" SortExpression="pet_age" />
+                 <asp:BoundField DataField="pet_race" HeaderText="Breed" SortExpression="pet_race" />
+                 <asp:BoundField DataField="pet_gender" HeaderText="Gender" SortExpression="pet_gender" />
+                   
+                <asp:TemplateField> 
+                    <ItemTemplate>    
+                        <asp:LinkButton CommandName="info_pet" Text="Info" OnClick="info_pet" runat="server" CommandArgument="id_pet"/>
+                   </ItemTemplate>
+                </asp:TemplateField>
+                            
             </Columns>
             <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
             <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
@@ -67,6 +71,12 @@
             <SortedDescendingCellStyle BackColor="#FCF6C0" />
             <SortedDescendingHeaderStyle BackColor="#820000" />
         </asp:GridView>
+
+            <asp:Image ID="img_pet" runat="server" Visible="false" ImageUrl="GetImage.ashx?id=12345" Height="150px" Width="165px" /><br />
+            <asp:Label ID="lbl_name" runat="server" Visible="false" Text="Label"></asp:Label><br />
+            <asp:Label ID="lbl_age" runat="server" Visible="false" Text="Label"></asp:Label><br />
+            <asp:Label ID="lbl_breed" runat="server" Visible="false" Text="Label"></asp:Label><br />
+            <asp:Label ID="lbl_gender" runat="server" Visible="false" Text="Label"></asp:Label><br />
         
         
         <%--THE SQL DATA SOURCE CONNECTED WITH THE GRIDVIEW--%>
