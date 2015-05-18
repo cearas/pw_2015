@@ -49,4 +49,50 @@ public partial class Client_ViewPets : System.Web.UI.Page
     {
         Response.Redirect("~/Client/AddPet.aspx");
     }
+    protected void info_pet(object sender, EventArgs e)
+    {
+
+        gv.Visible = false;
+        int iduser = get_UserID();
+
+        DataTable petsdt = new DataTable();
+
+        petsdt.Columns.Add("Name");
+        petsdt.Columns.Add("Age");
+        petsdt.Columns.Add("Breed");
+        petsdt.Columns.Add("Gender");
+        petsdt.Columns.Add("Image");
+
+        DataRow dr = petsdt.NewRow();
+
+
+        SqlConnection cnn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+        String query = "SELECT * FROM Pet WHERE id_user=@user_id";
+
+        SqlCommand cmd = new SqlCommand(query);
+        cmd.Parameters.AddWithValue("@user_id", iduser);
+
+        cmd.Connection = cnn;
+        SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+        cnn.Open();
+
+
+        SqlDataReader pets = cmd.ExecuteReader();
+        pets.Read();
+
+        
+        
+        lbl_name.Text = pets["pet_name"].ToString();
+        lbl_age.Text = pets["pet_age"].ToString();
+        lbl_breed.Text = pets["pet_race"].ToString();
+        lbl_gender.Text = pets["pet_gender"].ToString();
+        
+
+        pets.Close();
+        cnn.Close();
+
+
+
+    }
 }
