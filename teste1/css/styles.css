@@ -17,7 +17,7 @@ p {
 }
 
 a, a:hover, a:focus {
-	color: #30a5ff;
+	color: #ffae1a;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -47,7 +47,7 @@ h3, h4 {
 }
 
 .color-gray { color: #5f6468; }
-.color-blue { color: #30a5ff; }
+.color-blue { color: #ffae1a; }
 .color-teal { color: #1ebfae; }
 .color-orange { color: #ffb53e; }
 .color-red { color: #f9243f; }
@@ -81,9 +81,9 @@ h3, h4 {
 }
 
 .form-control:focus {
-	border: 1px solid #30a5ff;
+	border: 1px solid #ffae1a;
 	outline: 0;
-	box-shadow: inset 0px 0px 0px 1px #30a5ff;
+	box-shadow: inset 0px 0px 0px 1px #ffae1a;
 }
 
 .navbar-header .navbar-brand {
@@ -95,7 +95,7 @@ h3, h4 {
 }
 
 .navbar-header .navbar-brand span {
-	color: #30a5ff;
+	color: #ffae1a;
 }
 
 /*Buttons*/
@@ -158,8 +158,8 @@ fieldset[disabled] .btn-primary:active,
 .btn-primary.disabled.active,
 .btn-primary[disabled].active,
 fieldset[disabled] .btn-primary.active {
-	background-color: #30a5ff;
-	border-color: #30a5ff;
+	background-color: #ffae1a;
+	border-color: #ffae1a;
 }
 
 .btn-success,
@@ -258,10 +258,10 @@ a.bg-success:hover {
 }
 .bg-info {
 	color: #fff;
-	background-color: #30a5ff;
+	background-color: #ffae1a;
 }
 a.bg-info:hover {
-	background-color: #30a5ff;
+	background-color: #ffae1a;
 }
 .bg-info a {
 	color: rgba(255, 255, 255, .75);
@@ -425,7 +425,8 @@ a.bg-danger:hover {
 .panel-blue .widget-left { background: #30a5ff; color: #fff; }
 .panel-teal .widget-left { background: #1ebfae; color: #fff; }
 .panel-orange .widget-left { background: #ffb53e; color: #fff; }
-.panel-red .widget-left { background: #f9243f; color: #fff; }
+.panel-red .widget-left { background: #f9243f; color: #fff;
+    }
 
 .panel-widget {
 	background: #fff;
@@ -478,7 +479,7 @@ a.bg-danger:hover {
 
 .nav-pills li.active a,
 .nav-pills li.active a:hover {
-	background: #30a5ff;
+	background: #ffae1a;
 }
 
 .tab-content {
@@ -501,9 +502,9 @@ a.bg-danger:hover {
 .navbar input:focus {
 	color: #fff;
 	background: #555;
-	border: 1px solid #30a5ff;
+	border: 1px solid #ffae1a;
 	outline: 0;
-	box-shadow: inset 0px 0px 0px 1px #30a5ff;
+	box-shadow: inset 0px 0px 0px 1px #ffae1a;
 }
 
 .user-menu {
@@ -588,11 +589,11 @@ a.bg-danger:hover {
 .sidebar ul.nav ul.children li a {
 	height: 40px;
 	background: #f9f9f9;
-	color: #30a5ff!important;
+	color: #ffae1a!important;
 }
 
 .sidebar ul.nav li.current a {
-	background-color: #30a5ff;
+	background-color: #ffae1a;
 	color: #fff!important;
 }
 
@@ -664,7 +665,7 @@ h1.page-header {
 	width: 120px;
 }
 
-#easypiechart-blue .percent { color: #30a5ff;}
+#easypiechart-blue .percent { color: #ffae1a;}
 #easypiechart-teal .percent { color: #1ebfae;}
 #easypiechart-orange .percent { color: #ffb53e;}
 #easypiechart-red .percent { color: #ef4040;}
