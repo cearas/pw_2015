@@ -24,7 +24,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
-          <section id="main">
+    <section id="main">
         <section id="special">
             
             <h2 style="color:#424242">Profile</h2>
