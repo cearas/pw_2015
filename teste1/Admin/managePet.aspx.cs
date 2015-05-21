@@ -11,4 +11,9 @@ public partial class Admin_managePet : System.Web.UI.Page
     {
 
     }
+
+    protected void insert_pet(object sender, EventArgs e)
+    {
+        Response.Redirect("~/Client/AddPet.aspx");
+    }
 }
