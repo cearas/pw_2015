@@ -11,4 +11,12 @@ public partial class Vet_AddMed : System.Web.UI.Page
     {
 
     }
+    protected void AcceptButton_Click(object sender, EventArgs e)
+    {
+
+    }
+    protected void CleanButton_Click(object sender, EventArgs e)
+    {
+
+    }
 }

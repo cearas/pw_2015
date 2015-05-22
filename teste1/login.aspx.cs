@@ -39,9 +39,11 @@ public partial class login : System.Web.UI.Page
         SqlDataAdapter da = new SqlDataAdapter(cmd);
         DataTable dt = new DataTable();
         da.Fill(dt);
-        
+
         if (dt.Rows.Count > 0)
             FormsAuthentication.RedirectFromLoginPage(user.Text, false);
+        else
+            InvalidCredentialMessage.Visible = true;
         cnn.Close();
 
 

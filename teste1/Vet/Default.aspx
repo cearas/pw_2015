@@ -1,41 +1,55 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Vet/MP_Vet.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="Vet_Default" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-     <div id="wrapper1">
-	        <div id="header-wrapper">
-		        <div id="header" class="container">
-			        <div id="menu">
-                        <img src="../images/mini_logo.jpg" 
-				        <ul>
-					        <li><asp:HyperLink ID="default" runat="server" NavigateUrl="~/Default.aspx">Home</asp:HyperLink></li>
-                            <li><asp:HyperLink ID="aboutus" runat="server" NavigateUrl="~/aboutus.aspx">About Us</asp:HyperLink></li>
-					        <li><asp:HyperLink ID="specialties" runat="server" NavigateUrl="~/specialtys.aspx">Specialties</asp:HyperLink></li>
-                            <li><asp:HyperLink ID="Schedule" runat="server" NavigateUrl="~/Schedule.aspx">Schedule</asp:HyperLink></li>
-					        <li class="current_page_item"><asp:HyperLink ID="profile" runat="server" NavigateUrl="~/Vet/Default.aspx">Profile</asp:HyperLink></li>
-                            <li><asp:HyperLink ID="Booking" runat="server" NavigateUrl="~/Vet/Booking.aspx">Booking</asp:HyperLink></li>
-                            <li><asp:HyperLink ID="AddMed" runat="server" NavigateUrl="~/Vet/AddMed.aspx">Add Meds</asp:HyperLink></li>
-                            
-				        </ul>
-                        <img src="../images/hr.jpg"/>
-			        </div>
-		        </div>
-	        </div>
-        </div>
-</asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
-    <section id="main">
-        <section id="special">
-            
-            <h2 style="color:#424242">Teste</h2>
-
-            
-            
-
-            
-
-        </section>
-    </section>
+    <div class="col-xs-12 col-md-6 col-lg-3">
+				<div class="panel panel-blue panel-widget ">
+					<div class="row no-padding">
+						<div class="col-sm-3 col-lg-5 widget-left">
+							<asp:Image ID="Image2" ImageUrl="~/images/vet.gif" runat="server" />
+						</div>
+						<div class="col-sm-9 col-lg-7 widget-right">
+							<div class="text-muted">View Tasks</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		<div class="col-xs-12 col-md-6 col-lg-3">
+				<div class="panel panel-orange panel-widget">
+					<div class="row no-padding">
+						<div class="col-sm-3 col-lg-5 widget-left">
+                            <asp:Image ID="Image1" ImageUrl="~/images/user.gif" runat="server" />
+						</div>
+						<div class="col-sm-9 col-lg-7 widget-right">
+							<div class="text-muted">View Meds</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		<div class="col-xs-12 col-md-6 col-lg-3">
+				<div class="panel panel-teal panel-widget">
+					<div class="row no-padding">
+						<div class="col-sm-3 col-lg-5 widget-left">
+							<asp:Image ID="Image3" ImageUrl="~/images/app.gif" runat="server" />
+						</div>
+						<div class="col-sm-9 col-lg-7 widget-right">
+							<div class="text-muted">View Appointments</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		<div class="col-xs-12 col-md-6 col-lg-3">
+				<div class="panel panel-red panel-widget">
+					<div class="row no-padding">
+						<div class="col-sm-3 col-lg-5 widget-left">
+							<asp:Image ID="Image4" ImageUrl="~/images/pet.gif" runat="server" />
+						</div>
+						<div class="col-sm-9 col-lg-7 widget-right">
+							<div class="text-muted">Insert Pet</div>
+						</div>
+					</div>
+				</div>
+			</div>
 
 </asp:Content>
 

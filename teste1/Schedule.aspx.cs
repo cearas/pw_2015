@@ -13,7 +13,7 @@ public partial class Schedule : System.Web.UI.Page
         {
             Booking.Visible = false;
             ViewPets.Visible = false;
-            History.Visible = false;
+           
             profile.Visible = false;
         }
     }

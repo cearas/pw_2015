@@ -13,7 +13,7 @@ public partial class specialtys : System.Web.UI.Page
         {
             Booking.Visible = false;
             ViewPets.Visible = false;
-            History.Visible = false;
+            
             profile.Visible = false;
         }
     }
