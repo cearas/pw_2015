@@ -32,7 +32,7 @@
                     <td>
                         <asp:Calendar ID="calendar_appoint" runat="server" OnSelectionChanged="calendar_appoint_SelectionChanged"></asp:Calendar>
                         <asp:CustomValidator ID="cust_calendar" ValidationGroup="booking" Display="Dynamic" OnServerValidate="cust_calendar_validate" runat="server" ErrorMessage="Selecione um dia no calendário"></asp:CustomValidator>
-                         </td>
+                    </td>
                 </tr>
                  <tr>
                     <td><asp:Label ID="Label1" runat="server" Text="Hour: "></asp:Label></td>

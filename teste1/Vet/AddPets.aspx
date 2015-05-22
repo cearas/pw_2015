@@ -10,6 +10,14 @@
             <br />
             <table>
                 <tr>
+                    <td>
+                        <asp:Label ID="LabelUser" runat="server" Text="User: "></asp:Label>
+                    </td>
+                    <td>
+                        <asp:DropDownList ID="droplist_users" runat="server"></asp:DropDownList>
+                    </td>
+                </tr>
+                <tr>
                     <td><asp:Label ID="Label1" runat="server" Text="Name: "></asp:Label></td>
                     <td><asp:TextBox ID="txt_name" runat="server"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="reqName" ValidationGroup="addpet" ControlToValidate="txt_name" runat="server" ErrorMessage="Please enter your name!" Text="*"></asp:RequiredFieldValidator>
