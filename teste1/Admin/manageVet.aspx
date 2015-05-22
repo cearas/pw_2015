@@ -5,11 +5,8 @@
     <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" AutoGenerateEditButton="True" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2" DataKeyNames="id_user" DataSourceID="SqlDataSource1" ForeColor="Black" GridLines="None" >
         <AlternatingRowStyle BackColor="PaleGoldenrod" />
         <Columns>
-                <asp:TemplateField> 
-                    <ItemTemplate>
-                        <asp:LinkButton ID="insert_client" runat="server" OnClick="insert_client" CommandName="Insert">Insert</asp:LinkButton>
-                    </ItemTemplate>
-                </asp:TemplateField>
+
+
             <asp:CommandField ShowDeleteButton="True" />
             <asp:BoundField DataField="id_vet" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="id_vet" />
             <asp:BoundField DataField="vet_name" HeaderText="Name" SortExpression="vet_name" />

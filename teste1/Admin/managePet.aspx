@@ -25,11 +25,7 @@
                  <asp:BoundField DataField="pet_race" HeaderText="Breed" SortExpression="pet_race" />
                  <asp:BoundField DataField="pet_gender" HeaderText="Gender" SortExpression="pet_gender" />
                    
-                <asp:TemplateField> 
-                    <ItemTemplate>    
-                        <asp:LinkButton ID="LinkButton1" CommandName="info_pet" Text="Info" OnClick="info_pet" runat="server" CommandArgument="id_pet"/>
-                   </ItemTemplate>
-                </asp:TemplateField>
+
                             
             </Columns>
             <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />

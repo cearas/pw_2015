@@ -32,6 +32,7 @@ public partial class Client_AddPet : System.Web.UI.Page
         cmd.Parameters.AddWithValue("@breed", txt_breed.Text);
         cmd.Parameters.AddWithValue("@age", txt_age.Text);
         cmd.Parameters.AddWithValue("@gender", droplist_Gender.SelectedItem.ToString());
+        //cmd.Parameters.AddWithValue("@photo", fp_photo.);
         cmd.Parameters.AddWithValue("@user_id", iduser);
 
         cnn.Open();

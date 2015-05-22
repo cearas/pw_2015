@@ -1,0 +1,28 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MP_Vet.master.cs" Inherits="Vet_Vet" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>MobilVet</title>
+    <link href="http://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+    <link href="~/css/Style.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/fonts.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+    <div id="wrapper3">
+    <form id="form1" runat="server">
+            <table style="width:100%"><tr><td style="background-color:orange;text-align:center">
+                <asp:LoginName ID="LoginName1" runat="server" />
+                <asp:LoginStatus ID="LoginStatus1" runat="server" Font-Overline="false" ForeColor="Black"/></td></tr></table>
+            <asp:ContentPlaceHolder id="head" runat="server">
+        </asp:ContentPlaceHolder>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    
+    </form>
+        </div>
+</body>
+</html>

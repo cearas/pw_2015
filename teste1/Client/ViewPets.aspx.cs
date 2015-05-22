@@ -49,50 +49,28 @@ public partial class Client_ViewPets : System.Web.UI.Page
     {
         Response.Redirect("~/Client/AddPet.aspx");
     }
-    protected void info_pet(object sender, EventArgs e)
+
+    protected void gv_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
     {
-
         gv.Visible = false;
-        int iduser = get_UserID();
 
-        DataTable petsdt = new DataTable();
+        Label1.Visible = true;
+        Label2.Visible = true;
+        Label3.Visible = true;
+        Label4.Visible = true;
+        Label5.Visible = true;
 
-        petsdt.Columns.Add("Name");
-        petsdt.Columns.Add("Age");
-        petsdt.Columns.Add("Breed");
-        petsdt.Columns.Add("Gender");
-        petsdt.Columns.Add("Image");
+        lbl_name.Visible = true;
+        lbl_age.Visible = true;
+        lbl_breed.Visible = true;
+        lbl_gender.Visible = true;
+        img_pet.Visible = true;
 
-        DataRow dr = petsdt.NewRow();
-
-
-        SqlConnection cnn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
-        String query = "SELECT * FROM Pet WHERE id_user=@user_id";
-
-        SqlCommand cmd = new SqlCommand(query);
-        cmd.Parameters.AddWithValue("@user_id", iduser);
-
-        cmd.Connection = cnn;
-        SqlDataAdapter da = new SqlDataAdapter(cmd);
-
-        cnn.Open();
-
-
-        SqlDataReader pets = cmd.ExecuteReader();
-        pets.Read();
-
-        
-        
-        lbl_name.Text = pets["pet_name"].ToString();
-        lbl_age.Text = pets["pet_age"].ToString();
-        lbl_breed.Text = pets["pet_race"].ToString();
-        lbl_gender.Text = pets["pet_gender"].ToString();
-        
-
-        pets.Close();
-        cnn.Close();
-
-
-
+        lbl_name.Text = gv.Rows[e.NewSelectedIndex].Cells[3].Text;
+        lbl_age.Text = gv.Rows[e.NewSelectedIndex].Cells[4].Text;
+        lbl_breed.Text = gv.Rows[e.NewSelectedIndex].Cells[5].Text;
+        lbl_gender.Text = gv.Rows[e.NewSelectedIndex].Cells[6].Text;
+        img_pet.ImageUrl = gv.Rows[e.NewSelectedIndex].Cells[7].ToString();
     }
+
 }
