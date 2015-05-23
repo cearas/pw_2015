@@ -17,6 +17,7 @@
             <AlternatingRowStyle BackColor="White" />
             
             <Columns>
+                <asp:CommandField ShowDeleteButton="True" />
                 <asp:TemplateField> 
                     <ItemTemplate>
                         <asp:LinkButton ID="insert_pet" runat="server" OnClick="insert_pet" CommandName="Insert">Insert</asp:LinkButton>

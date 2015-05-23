@@ -14,15 +14,15 @@
                         <asp:Label ID="LabelUser" runat="server" Text="User: "></asp:Label>
                     </td>
                     <td>
-                        <asp:DropDownList ID="droplist_users" runat="server"></asp:DropDownList>
+                        <asp:DropDownList ID="droplist_users" AutoPostBack="true" OnSelectedIndexChanged="onselected_users" runat="server"></asp:DropDownList>
                     </td>
                 </tr>                
                 <tr>
                     <td><asp:Label ID="Label2" runat="server" Text="Pet: "></asp:Label></td>
                     <td>
-                        <asp:Button ID="bt_AddPet" runat="server" Text="Add Pet" OnClick="bt_AddPet_Click" />
+                        <asp:Button ID="bt_AddPet" runat="server"  Text="Add Pet" OnClick="bt_AddPet_Click" />
                        
-                        <asp:DropDownList ID="droplist_pets" runat="server"></asp:DropDownList>
+                        <asp:DropDownList ID="droplist_pets" AutoPostBack="true" runat="server"></asp:DropDownList>
                        
                     </td>  
                 </tr>

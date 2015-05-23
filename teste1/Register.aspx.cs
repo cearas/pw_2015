@@ -34,7 +34,15 @@ public partial class teste1_Register : System.Web.UI.Page
             cmd.Parameters.AddWithValue("@nif", txt_nif.Text);
 
             cnn.Open();
-            int n = cmd.ExecuteNonQuery();
+            try
+            {
+                int n = cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex) {
+                var sqle = ex.InnerException as SqlException;
+                InvalidCredentialMessage.Visible = true;
+            
+            }
             cnn.Close();
 
             txt_nif.Text = "";

@@ -7,6 +7,8 @@
            
             <h2 style="color:#424242">Add Pet</h2>
             <asp:ValidationSummary ID="validationPet" runat="server" />
+            <asp:Label ID="InvalidCredentialMessage" runat="server" Text="Please select an user!" Visible="false"></asp:Label>
+            
             <br />
             <table>
                 <tr>
@@ -14,7 +16,7 @@
                         <asp:Label ID="LabelUser" runat="server" Text="User: "></asp:Label>
                     </td>
                     <td>
-                        <asp:DropDownList ID="droplist_users" runat="server"></asp:DropDownList>
+                        <asp:DropDownList ID="droplist_users" AutoPostBack="true" runat="server"></asp:DropDownList>
                     </td>
                 </tr>
                 <tr>

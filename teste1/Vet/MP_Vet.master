@@ -22,7 +22,7 @@
             <ul class="nav menu">
 			    <li><a href="Tasks.aspx"><span class="glyphicon glyphicon-dashboard"></span> Manage Tasks</a></li>
                 <li><a href="Booking.aspx"><span class="glyphicon glyphicon-info-sign"></span> Bookings</a></li>
-			    <li><a href="AddMed.aspx"><span class="glyphicon glyphicon-stats"></span> Manage Meds</a></li>
+			    <li><a href="ViewMeds.aspx"><span class="glyphicon glyphicon-stats"></span> Manage Meds</a></li>
 			    <li><a href="ViewPets.aspx"><span class="glyphicon glyphicon-list-alt"></span> Manage Pets</a></li>
 		    </ul>
         </div>

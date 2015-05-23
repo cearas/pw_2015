@@ -12,68 +12,68 @@ public partial class Vet_Booking : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (!this.Page.User.Identity.IsAuthenticated)
-        {
-            FormsAuthentication.RedirectToLoginPage();
-        }
-
         if (!IsPostBack)
         {
             LoadUsers();
-            LoadPets();
-
         }
     }
 
 
     private void LoadPets()
     {
+        
+            int iduser = Convert.ToInt32(droplist_users.SelectedValue);
+            lbl.Text = iduser.ToString();
+            DataTable pets = new DataTable();
+            SqlConnection cnn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+            String query = "SELECT id_pet,pet_name FROM Pet WHERE id_user=@user_id";
 
-        int iduser = get_UserID();
-        DataTable pets = new DataTable();
-        SqlConnection cnn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
-        String query = "SELECT id_pet,pet_name FROM Pet WHERE id_user=@user_id";
+            SqlCommand cmd = new SqlCommand(query);
+            cmd.Parameters.AddWithValue("@user_id", iduser);
 
-        SqlCommand cmd = new SqlCommand(query);
-        cmd.Parameters.AddWithValue("@user_id", iduser);
+            cmd.Connection = cnn;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
 
-        cmd.Connection = cnn;
-        SqlDataAdapter da = new SqlDataAdapter(cmd);
+            droplist_pets.Visible = true;
+            da.Fill(pets);
 
-        droplist_pets.Visible = true;
-        da.Fill(pets);
+            droplist_pets.DataSource = pets;
+            droplist_pets.DataTextField = "pet_name";
+            droplist_pets.DataValueField = "id_pet";
+            droplist_pets.DataBind();
 
-        droplist_pets.DataSource = pets;
-        droplist_pets.DataTextField = "pet_name";
-        droplist_pets.DataValueField = "id_pet";
-        droplist_pets.DataBind();
+            droplist_pets.Items.Insert(0, new ListItem("<Select Pet>", "0"));
+        
+    }
 
-        droplist_pets.Items.Insert(0, new ListItem("<Select Pet>", "0"));
+    protected void onselected_users(object sender, EventArgs e)
+    {
+        LoadPets();
 
     }
 
     private void LoadUsers()
     {
-        int iduser = get_UserID();
-        DataTable pets = new DataTable();
+
+        DataTable users = new DataTable();
         SqlConnection cnn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
-        String query = "SELECT id_pet,pet_name FROM Pet WHERE id_user=@user_id";
+        String query = "SELECT * FROM [User]";
 
         SqlCommand cmd = new SqlCommand(query);
-        cmd.Parameters.AddWithValue("@user_id", iduser);
+        //cmd.Parameters.AddWithValue("@user_id", iduser);
 
         cmd.Connection = cnn;
         SqlDataAdapter da = new SqlDataAdapter(cmd);
 
-        droplist_pets.Visible = true;
-        da.Fill(pets);
+        droplist_users.Visible = true;
+        da.Fill(users);
 
-        droplist_pets.DataSource = pets;
-        droplist_pets.DataTextField = "pet_name";
-        droplist_pets.DataValueField = "id_pet";
-        droplist_pets.DataBind();
+        droplist_users.DataSource = users;
+        droplist_users.DataTextField = "user_name";
+        droplist_users.DataValueField = "id_user";
+        droplist_users.DataBind();
 
-        droplist_pets.Items.Insert(0, new ListItem("<Select Pet>", "0"));
+        droplist_users.Items.Insert(0, new ListItem("<Select User>", "0"));
 
     }
 
@@ -93,7 +93,7 @@ public partial class Vet_Booking : System.Web.UI.Page
 
     protected void bt_AddPet_Click(object sender, EventArgs e)
     {
-        Response.Redirect("AddPet.aspx");
+        Response.Redirect("~/Vet/AddPets.aspx");
     }
 
     protected void AcceptButton_Click(object sender, EventArgs e)
@@ -105,11 +105,11 @@ public partial class Vet_Booking : System.Web.UI.Page
                 if (Page.IsValid)
                 {
 
-                    int iduser = get_UserID();
+                    int iduser = Convert.ToInt32(droplist_users.SelectedValue);
                     DateTime dtUserDate;
                     dtUserDate = calendar_appoint.SelectedDate;
                     SqlConnection cnn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
-                    String query = "Insert into apoint ([apoint_date], apoint_subject, apoint_type, apoint_specialty, apoint_hour, id_pet, user_id) VALUES (@date, @subject, @type, @specialty,@hour,@pet,@user_id)";
+                    String query = "Insert into apoint ([apoint_date], apoint_subject, apoint_type, apoint_specialty, apoint_hour, id_pet, id_user, id_vet) VALUES (@date, @subject, @type, @specialty,@hour,@pet,@user_id,@id_vet)";
 
                     SqlCommand cmd = new SqlCommand(query);
                     cmd.Connection = cnn;
@@ -121,6 +121,7 @@ public partial class Vet_Booking : System.Web.UI.Page
                     cmd.Parameters.AddWithValue("@hour", droplist_hour.SelectedItem.ToString());
                     cmd.Parameters.AddWithValue("@pet", droplist_pets.SelectedValue);
                     cmd.Parameters.AddWithValue("@user_id", iduser);
+                    cmd.Parameters.AddWithValue("@id_vet", Page.User.Identity.IsAuthenticated);
                     cnn.Open();
                     int n = cmd.ExecuteNonQuery();
                     cnn.Close();
