@@ -2,10 +2,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
-    <section class="content">
-
-
-                    <div class="row">
+                   
                         <div class="col-md-3">
                             <div class="box box-primary">
                                 <div class="box-header">
@@ -61,10 +58,7 @@
                                 </div><!-- /.box-body -->
                             </div><!-- /. box -->
                         </div><!-- /.col -->
-                    </div><!-- /.row -->  
 
-
-                </section><!-- /.content -->
 
     
 
