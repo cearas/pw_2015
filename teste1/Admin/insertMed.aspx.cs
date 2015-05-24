@@ -30,9 +30,6 @@ public partial class Admin_insertMed : System.Web.UI.Page
         int n = cmd.ExecuteNonQuery();
         cnn.Close();
 
-        txt_name.Text = "";
-        txt_qtd.Text = "";
-
         Response.Redirect("manageMeds.aspx");
 
     }
