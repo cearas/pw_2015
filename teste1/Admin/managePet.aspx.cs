@@ -5,15 +5,15 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class Admin_manageMeds : System.Web.UI.Page
+public partial class Admin_managePet : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
 
-
     }
-    protected void insert_med(object sender, EventArgs e)
+
+    protected void insert_pet(object sender, EventArgs e)
     {
-        Response.Redirect("insertClient.aspx");
+        Response.Redirect("~/Client/AddPet.aspx");
     }
 }
