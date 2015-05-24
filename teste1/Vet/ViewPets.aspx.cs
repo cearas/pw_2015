@@ -66,10 +66,10 @@ public partial class Vet_ViewPets : System.Web.UI.Page
         lbl_gender.Visible = true;
         img_pet.Visible = true;
 
-        lbl_name.Text = gv.Rows[e.NewSelectedIndex].Cells[3].Text;
-        lbl_age.Text = gv.Rows[e.NewSelectedIndex].Cells[4].Text;
-        lbl_breed.Text = gv.Rows[e.NewSelectedIndex].Cells[5].Text;
-        lbl_gender.Text = gv.Rows[e.NewSelectedIndex].Cells[6].Text;
-        img_pet.ImageUrl = gv.Rows[e.NewSelectedIndex].Cells[7].ToString();
+        lbl_name.Text = gv.Rows[e.NewSelectedIndex].Cells[4].Text;
+        lbl_age.Text = gv.Rows[e.NewSelectedIndex].Cells[5].Text;
+        lbl_breed.Text = gv.Rows[e.NewSelectedIndex].Cells[6].Text;
+        lbl_gender.Text = gv.Rows[e.NewSelectedIndex].Cells[7].Text;
+        img_pet.ImageUrl = gv.Rows[e.NewSelectedIndex].Cells[8].ToString();
     }
 }
