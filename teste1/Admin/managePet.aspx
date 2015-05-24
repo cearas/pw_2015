@@ -24,9 +24,7 @@
                  <asp:BoundField DataField="pet_age" HeaderText="Age" SortExpression="pet_age" />
                  <asp:BoundField DataField="pet_race" HeaderText="Breed" SortExpression="pet_race" />
                  <asp:BoundField DataField="pet_gender" HeaderText="Gender" SortExpression="pet_gender" />
-                   
-
-                            
+      
             </Columns>
             <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
             <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />

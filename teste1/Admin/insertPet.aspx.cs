@@ -12,6 +12,34 @@ public partial class Admin_insertPet : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (!IsPostBack)
+        {
+            LoadUsers();
+        }
+    }
+
+    private void LoadUsers()
+    {
+
+        DataTable users = new DataTable();
+        SqlConnection cnn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+        String query = "SELECT user_name FROM [User]";
+
+        SqlCommand cmd = new SqlCommand(query);
+        //cmd.Parameters.AddWithValue("@user_id", iduser);
+
+        cmd.Connection = cnn;
+        SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+        droplist_User.Visible = true;
+        da.Fill(users);
+
+        droplist_User.DataSource = users;
+        droplist_User.DataTextField = "user_name";
+        droplist_User.DataValueField = "id_user";
+        droplist_User.DataBind();
+
+        droplist_User.Items.Insert(0, new ListItem("<Select User>", "0"));
 
     }
 
