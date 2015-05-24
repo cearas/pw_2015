@@ -43,19 +43,7 @@
             <SortedDescendingCellStyle BackColor="#FCF6C0" />
             <SortedDescendingHeaderStyle BackColor="#820000" />
         </asp:GridView>
-            <asp:Label ID="Label5" runat="server" Visible="false" Text="Photo: "></asp:Label>
-            <asp:Image ID="img_pet" runat="server" Visible="false" ImageUrl="GetImage.ashx?id=12345" Height="150px" Width="165px" /><br />
-            <asp:Label ID="Label1" runat="server" Visible="false" Text="Name: "></asp:Label>
-            <asp:Label ID="lbl_name" runat="server" Visible="false" Text="Label"></asp:Label><br />
-            <asp:Label ID="Label2" runat="server" Visible="false" Text="Age: "></asp:Label>
-            <asp:Label ID="lbl_age" runat="server" Visible="false" Text="Label"></asp:Label><br />
-            <asp:Label ID="Label3" runat="server" Visible="false" Text="Breed: "></asp:Label>
-            <asp:Label ID="lbl_breed" runat="server" Visible="false" Text="Label"></asp:Label><br />
-            <asp:Label ID="Label4" runat="server" Visible="false" Text="Gender: "></asp:Label>
-            <asp:Label ID="lbl_gender" runat="server" Visible="false" Text="Label"></asp:Label><br />
-        
-        
-        <%--THE SQL DATA SOURCE CONNECTED WITH THE GRIDVIEW--%>
+            <br />
        <asp:SqlDataSource ID="pet" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>"
             SelectCommand="SELECT [id_pet], [pet_name] AS pet_name, [pet_age], [pet_race], [pet_gender], [pet_photo], user_name FROM [Pet] INNER JOIN [User] ON [Pet].id_user = [User].id_user "
             UpdateCommand="UPDATE [Pet] SET [pet_name] = @pet_name, [pet_age] = @pet_age, [pet_race] = @pet_race, [pet_gender] = @pet_gender WHERE [id_pet] = @id_pet"
