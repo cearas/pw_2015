@@ -8,13 +8,13 @@
             <br />
 
             <asp:GridView 
-            ID="gv" Font-Names="Arial" Font-Size="Smaller"
+            ID="gv" Font-Names="Arial" 
             AutoGenerateColumns="False" 
             AutoGenerateEditButton="True" 
             DataSourceID="pet"
-            runat="server" CellSpacing="4" CellPadding="10" ForeColor="#333333" GridLines="Both" AllowPaging="True" DataKeyNames="Id">
+            runat="server" CellPadding="2" ForeColor="Black" GridLines="None" AllowPaging="True" DataKeyNames="Id" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px">
             
-            <AlternatingRowStyle BackColor="White" />
+            <AlternatingRowStyle BackColor="PaleGoldenrod" />
             
             <Columns>
             
@@ -34,15 +34,14 @@
 
                             
             </Columns>
-            <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
-            <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
-            <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
-            <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
-            <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="Navy" />
-            <SortedAscendingCellStyle BackColor="#FDF5AC" />
-            <SortedAscendingHeaderStyle BackColor="#4D0000" />
-            <SortedDescendingCellStyle BackColor="#FCF6C0" />
-            <SortedDescendingHeaderStyle BackColor="#820000" />
+            <FooterStyle BackColor="Tan" />
+            <HeaderStyle BackColor="Tan" Font-Bold="True" />
+            <PagerStyle BackColor="PaleGoldenrod" ForeColor="DarkSlateBlue" HorizontalAlign="Center" />
+            <SelectedRowStyle BackColor="DarkSlateBlue" ForeColor="GhostWhite" />
+            <SortedAscendingCellStyle BackColor="#FAFAE7" />
+            <SortedAscendingHeaderStyle BackColor="#DAC09E" />
+            <SortedDescendingCellStyle BackColor="#E1DB9C" />
+            <SortedDescendingHeaderStyle BackColor="#C2A47B" />
         </asp:GridView>
             
         
