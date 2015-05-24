@@ -15,16 +15,16 @@
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<a href="Default.aspx">MOBILVET</a>
+				<a href="Default.aspx"><span>MOBILVET</span></a>
 			</div>
         </div>
     </nav>
         <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
             <ul class="nav menu">
-			    <li><a href="manageClient.aspx"><span class="glyphicon glyphicon-dashboard"></span> Manage Clients</a></li>
-                <li><a href="manageVet.aspx"><span class="glyphicon glyphicon-info-sign"></span> Manage Vets</a></li>
-			    <li><a href="manageMeds.aspx"><span class="glyphicon glyphicon-stats"></span> Manage Medication</a></li>
-			    <li><a href="managePet.aspx"><span class="glyphicon glyphicon-list-alt"></span> Manage Pets</a></li>
+			    <li><a href="manageClient.aspx"><span class="glyphicon glyphicon-pencil"></span> Manage Clients</a></li>
+                <li><a href="manageVet.aspx"><span class="glyphicon glyphicon-pencil"></span> Manage Vets</a></li>
+			    <li><a href="manageMeds.aspx"><span class="glyphicon glyphicon-pencil"></span> Manage Medication</a></li>
+			    <li><a href="managePet.aspx"><span class="glyphicon glyphicon-pencil"></span> Manage Pets</a></li>
 			    <li><a href="manageApoints.aspx"><span class="glyphicon glyphicon-pencil"></span> Manage Appointments</a></li>
 		    </ul>
         </div>

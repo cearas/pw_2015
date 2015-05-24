@@ -2,51 +2,72 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     
-    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="SqlDataSource1" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2" ForeColor="Black" GridLines="None">
-        <AlternatingRowStyle BackColor="PaleGoldenrod" />
-        <Columns>
-            <asp:BoundField DataField="Id" HeaderText="Id" InsertVisible="False" ReadOnly="True" SortExpression="Id" />
-            <asp:BoundField DataField="med_name" HeaderText="Name" SortExpression="med_name" />
-            <asp:BoundField DataField="med_qtd" HeaderText="Quantity" SortExpression="med_qtd" />
-            <asp:CommandField ShowEditButton="True" />
-            <asp:CommandField ShowDeleteButton="True" />
-            <asp:TemplateField> 
-                <ItemTemplate>
-                    <asp:LinkButton ID="insert_med" runat="server" OnClick="insert_med" CommandName="Insert">Insert</asp:LinkButton>
-                </ItemTemplate>
-            </asp:TemplateField>
-        </Columns>
-        <FooterStyle BackColor="Tan" />
-        <HeaderStyle BackColor="Tan" Font-Bold="True" />
-        <PagerStyle BackColor="PaleGoldenrod" ForeColor="DarkSlateBlue" HorizontalAlign="Center" />
-        <SelectedRowStyle BackColor="DarkSlateBlue" ForeColor="GhostWhite" />
-        <SortedAscendingCellStyle BackColor="#FAFAE7" />
-        <SortedAscendingHeaderStyle BackColor="#DAC09E" />
-        <SortedDescendingCellStyle BackColor="#E1DB9C" />
-        <SortedDescendingHeaderStyle BackColor="#C2A47B" />
-    </asp:GridView>
+    <h2 style="color:#424242">Manage Meds</h2>
+            <hr />
 
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
-        SelectCommand="SELECT * FROM [Med] ORDER BY [Id]"
-        UpdateCommand="UPDATE [Med] SET med_name = @med_name, med_qtd = @med_qtd"
-        DeleteCommand="DELETE FROM [Med] WHERE Id = @id_med"
-        InsertCommand="INSERT INTO [Med] ([med_name], [med_qtd]) VALUES (@med_name, @med_qtd)">
-
-        <UpdateParameters>
-            <asp:Parameter Name="med_name" />
-            <asp:Parameter Name="med_qtd" />
-        </UpdateParameters>
+            <asp:GridView 
+            ID="gv" Font-Names="Arial" 
+            AutoGenerateColumns="False" 
+            AutoGenerateEditButton="True" 
+            DataSourceID="pet"
+            runat="server" CellPadding="2" ForeColor="Black" GridLines="None" AllowPaging="True" DataKeyNames="Id" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px">
             
-        <DeleteParameters>
-            <asp:Parameter Name="id_med" /> 
-        </DeleteParameters>
+            <AlternatingRowStyle BackColor="PaleGoldenrod" />
             
-        <InsertParameters>
-            <asp:Parameter Name="med_name" />
-            <asp:Parameter Name="med_qtd" />
-        </InsertParameters>
+            <Columns>
+            
+                <%--DATA BOUND COLUMNS--%>
+                <asp:TemplateField> 
+                    <ItemTemplate>
+                        <asp:LinkButton ID="insert_med" runat="server" OnClick="insert_med" CommandName="Insert">Insert</asp:LinkButton>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                 
+                 <asp:CommandField ShowDeleteButton="True" />
+                 
+                 <asp:BoundField DataField="Id" HeaderText=" Id " SortExpression="Id" InsertVisible="False" ReadOnly="True"  />
+                 <asp:BoundField DataField="med_name" HeaderText=" Medication Name " SortExpression="med_name" />
+                 <asp:BoundField DataField="med_qtd" HeaderText=" Quantity" SortExpression="med_qtd" />
+                  
 
-    </asp:SqlDataSource>
+                            
+            </Columns>
+            <FooterStyle BackColor="Tan" />
+            <HeaderStyle BackColor="Tan" Font-Bold="True" />
+            <PagerStyle BackColor="PaleGoldenrod" ForeColor="DarkSlateBlue" HorizontalAlign="Center" />
+            <SelectedRowStyle BackColor="DarkSlateBlue" ForeColor="GhostWhite" />
+            <SortedAscendingCellStyle BackColor="#FAFAE7" />
+            <SortedAscendingHeaderStyle BackColor="#DAC09E" />
+            <SortedDescendingCellStyle BackColor="#E1DB9C" />
+            <SortedDescendingHeaderStyle BackColor="#C2A47B" />
+        </asp:GridView>
+            
+        
+        
+        <%--THE SQL DATA SOURCE CONNECTED WITH THE GRIDVIEW--%>
+       <asp:SqlDataSource ID="pet" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>"
+            SelectCommand="SELECT * FROM [Med] ORDER BY [Id]"
+            UpdateCommand="UPDATE [Med] SET [med_name] = @med_name, [med_qtd] = @med_qtd WHERE [Id] = @Id"
+            DeleteCommand="DELETE FROM [Med] WHERE [Id] = @Id"
+            InsertCommand="INSERT INTO [Med] ([med_name], [med_qtd]) VALUES (@med_name, @med_qtd)">
+           
+           <UpdateParameters>
+                <asp:Parameter Name="med_name" Type="String" />
+                <asp:Parameter Name="med_qtd" Type="Int32" />
+                <asp:Parameter Name="Id" Type="Int32" />
+            </UpdateParameters>
+            
+            <DeleteParameters>
+                <asp:Parameter Name="Id" Type="Int32" /> 
+            </DeleteParameters>
+            
+            <InsertParameters>
+                <asp:Parameter Name="med_name" Type="String" />
+                <asp:Parameter Name="med_qtd" Type="Int32" />
+            </InsertParameters>
+
+        
+        </asp:SqlDataSource>
     
 </asp:Content>
 

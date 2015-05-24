@@ -14,6 +14,6 @@ public partial class Admin_manageMeds : System.Web.UI.Page
     }
     protected void insert_med(object sender, EventArgs e)
     {
-        Response.Redirect("insertClient.aspx");
+        Response.Redirect("insertMed.aspx");
     }
 }

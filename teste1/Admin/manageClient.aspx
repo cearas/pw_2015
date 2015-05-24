@@ -1,6 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/MasterPageAdmin.master" AutoEventWireup="true" CodeFile="manageClient.aspx.cs" Inherits="Admin_manageClient" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+
+    <h2 style="color:#424242">Manage Clients</h2>
+            <hr />
     <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" AutoGenerateEditButton="True" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2" DataKeyNames="id_user" DataSourceID="SqlDataSource1" ForeColor="Black" GridLines="None" >
         <AlternatingRowStyle BackColor="PaleGoldenrod" />
         <Columns>
@@ -29,11 +32,12 @@
     </asp:GridView>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
         SelectCommand="SELECT [id_user], [user_name], [user_district], [user_phone], [user_address], [user_mail], [user_nif] FROM [User] ORDER BY [id_user]"
-        UpdateCommand="UPDATE [User] SET [user_name]=@user_name, [user_district] = @user_district, [user_phone] = @user_phone, [user_address] = @user_address, [user_mail] = @user_mail, [user_nif]=@user_nif"
+        UpdateCommand="UPDATE [User] SET [user_name]=@user_name, [user_district] = @user_district, [user_phone] = @user_phone, [user_address] = @user_address, [user_mail] = @user_mail, [user_nif]=@user_nif WHERE id_user=@id_user"
         DeleteCommand="DELETE FROM [User] WHERE id_user = @id_user"
         InsertCommand="INSERT INTO [User] ([user_name], [user_district], [user_phone], [user_address], [user_mail], [user_nif]) VALUES (@user_name, @user_district, @user_phone, @user_address, @user_mail, @user_nif)">
            
            <UpdateParameters>
+                <asp:Parameter Name="id_user" />
                 <asp:Parameter Name="user_name" />
                 <asp:Parameter Name="user_district" />
                 <asp:Parameter Name="user_phone" />
