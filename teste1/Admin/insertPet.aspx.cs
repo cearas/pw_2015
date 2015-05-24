@@ -62,11 +62,6 @@ public partial class Admin_insertPet : System.Web.UI.Page
         int n = cmd.ExecuteNonQuery();
         cnn.Close();
 
-        txt_age.Text = "";
-        txt_breed.Text = "";
-        txt_name.Text = "";
-        droplist_Gender.SelectedValue = "0";
-
         Response.Redirect("managePet.aspx");
     }
     protected void CleanButton_Click(object sender, EventArgs e)

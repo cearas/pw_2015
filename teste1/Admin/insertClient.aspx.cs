@@ -38,14 +38,6 @@ public partial class Admin_insertClient : System.Web.UI.Page
             int n = cmd.ExecuteNonQuery();
             cnn.Close();
 
-            txt_nif.Text = "";
-            txt_name.Text = "";
-            txt_password.Text = "";
-            txt_phone.Text = "";
-            txt_email.Text = "";
-            txt_district.Text = "";
-            txt_address.Text = "";
-
             Response.Redirect("manageClient.aspx");
         }
 
