@@ -46,9 +46,7 @@
                 <asp:Parameter Name="user_nif" /> 
             </UpdateParameters>
             
-            <DeleteParameters>
-                <asp:Parameter Name="id_user" /> 
-            </DeleteParameters>
+            v
             
             <InsertParameters>
                 <asp:Parameter Name="user_name" />

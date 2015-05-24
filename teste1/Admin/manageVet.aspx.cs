@@ -15,6 +15,6 @@ public partial class Admin_manageVet : System.Web.UI.Page
 
     protected void insert_vet(object sender, EventArgs e)
     {
-
+        Response.Redirect("insertVet.aspx");
     }
 }
