@@ -3,13 +3,17 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
     <asp:GridView 
-            ID="gv" Visible="true" Font-Names="Arial" Font-Size="Smaller" 
+            ID="gv" Font-Names="Arial"  
             AutoGenerateColumns="False" 
             AutoGenerateEditButton="True" 
             DataSourceID="pet"
+<<<<<<< HEAD
             runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AllowPaging="True">
+=======
+            runat="server" CellPadding="2" ForeColor="Black" GridLines="None" AllowPaging="True" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px">
+>>>>>>> origin/master
             
-            <AlternatingRowStyle BackColor="White" />
+            <AlternatingRowStyle BackColor="PaleGoldenrod" />
             
             <Columns>
                 <asp:TemplateField> 
@@ -26,21 +30,20 @@
                  <asp:BoundField DataField="pet_gender" HeaderText="Gender" SortExpression="pet_gender" />
       
             </Columns>
-            <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
-            <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
-            <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
-            <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
-            <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="Navy" />
-            <SortedAscendingCellStyle BackColor="#FDF5AC" />
-            <SortedAscendingHeaderStyle BackColor="#4D0000" />
-            <SortedDescendingCellStyle BackColor="#FCF6C0" />
-            <SortedDescendingHeaderStyle BackColor="#820000" />
+            <FooterStyle BackColor="Tan" />
+            <HeaderStyle BackColor="Tan" Font-Bold="True" />
+            <PagerStyle BackColor="PaleGoldenrod" ForeColor="DarkSlateBlue" HorizontalAlign="Center" />
+            <SelectedRowStyle BackColor="DarkSlateBlue" ForeColor="GhostWhite" />
+            <SortedAscendingCellStyle BackColor="#FAFAE7" />
+            <SortedAscendingHeaderStyle BackColor="#DAC09E" />
+            <SortedDescendingCellStyle BackColor="#E1DB9C" />
+            <SortedDescendingHeaderStyle BackColor="#C2A47B" />
         </asp:GridView>
 
         <%--THE SQL DATA SOURCE CONNECTED WITH THE GRIDVIEW--%>
        <asp:SqlDataSource ID="pet" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>"
             SelectCommand="SELECT [pet_name ] AS pet_name_, [pet_age], [pet_race], [pet_gender], [pet_photo] FROM [Pet]"
-            UpdateCommand="UPDATE Pet SET pet_age = @Pet_Age, pet_race = @Pet_Race, pet_gender = @Pet_Gender, [pet_name] = @Pet_Name"
+            UpdateCommand="UPDATE Pet SET pet_age = @Pet_Age, pet_race = @Pet_Race, pet_gender = @Pet_Gender, [pet_name ] = @Pet_Name"
             DeleteCommand="DELETE FROM Pet WHERE id_pet = @id_pet"
             InsertCommand="INSERT INTO [Pet] ([pet_name], [pet_age], [pet_race], [pet_gender], [pet_photo]) VALUES (@Pet_Name, @Pet_Age, @Pet_Race, @Pet_Gender, @Pet_Photo)">
            

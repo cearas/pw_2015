@@ -2,9 +2,9 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     
-    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="SqlDataSource1">
+    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="SqlDataSource1" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2" ForeColor="Black" GridLines="None">
+        <AlternatingRowStyle BackColor="PaleGoldenrod" />
         <Columns>
-
             <asp:BoundField DataField="Id" HeaderText="Id" InsertVisible="False" ReadOnly="True" SortExpression="Id" />
             <asp:BoundField DataField="med_name" HeaderText="Name" SortExpression="med_name" />
             <asp:BoundField DataField="med_qtd" HeaderText="Quantity" SortExpression="med_qtd" />
@@ -16,6 +16,14 @@
                 </ItemTemplate>
             </asp:TemplateField>
         </Columns>
+        <FooterStyle BackColor="Tan" />
+        <HeaderStyle BackColor="Tan" Font-Bold="True" />
+        <PagerStyle BackColor="PaleGoldenrod" ForeColor="DarkSlateBlue" HorizontalAlign="Center" />
+        <SelectedRowStyle BackColor="DarkSlateBlue" ForeColor="GhostWhite" />
+        <SortedAscendingCellStyle BackColor="#FAFAE7" />
+        <SortedAscendingHeaderStyle BackColor="#DAC09E" />
+        <SortedDescendingCellStyle BackColor="#E1DB9C" />
+        <SortedDescendingHeaderStyle BackColor="#C2A47B" />
     </asp:GridView>
 
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
