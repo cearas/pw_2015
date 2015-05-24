@@ -6,11 +6,11 @@
             <hr />
 
     <asp:GridView 
-            ID="gv" Font-Names="Arial"  AutoGenerateSelectButton="True"
+            ID="gv" Font-Names="Arial" 
             AutoGenerateColumns="False" 
             AutoGenerateEditButton="True" 
             DataSourceID="pet"
-            runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AllowPaging="True" OnSelectedIndexChanging="gv_SelectedIndexChanging" DataKeyNames="id_pet">
+            runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AllowPaging="True"  DataKeyNames="id_pet">
             
             <AlternatingRowStyle BackColor="White" />
             
