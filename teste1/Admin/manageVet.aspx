@@ -7,7 +7,7 @@
         <Columns>
                 <asp:TemplateField> 
                     <ItemTemplate>
-                        <asp:LinkButton ID="insert_client" runat="server" OnClick="insert_client" CommandName="Insert">Insert</asp:LinkButton>
+                        <asp:LinkButton ID="insert_vet" runat="server" OnClick="insert_vet" CommandName="Insert">Insert</asp:LinkButton>
                     </ItemTemplate>
                 </asp:TemplateField>
             <asp:CommandField ShowDeleteButton="True" />
