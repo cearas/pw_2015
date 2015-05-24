@@ -74,6 +74,7 @@ public partial class Vet_AddPets : System.Web.UI.Page
                     txt_name.Text = "";
                     droplist_Gender.SelectedValue = "0";
                     droplist_users.SelectedValue = "0";
+                    Response.Redirect("~/Vet/ViewPets.aspx");
                 }
             }else
             InvalidCredentialMessage.Visible = true;

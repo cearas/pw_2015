@@ -22,7 +22,7 @@
                     <td><asp:Label ID="Label2" runat="server" Text="Quantidade: "></asp:Label></td>
                     <td><asp:TextBox ID="txt_qtd" runat="server"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="reqAge" ValidationGroup="addmed" ControlToValidate="txt_qtd" runat="server" ErrorMessage="Please enter the quantity of medication!" Text="*"></asp:RequiredFieldValidator>
-                        <asp:RegularExpressionValidator ID="regexAge" ValidationGroup="addmed" runat="server" ControlToValidate="txt_qtd" ValidationExpression="^[0-9]{1,2}$" ErrorMessage="Invalid Age" Text="*"></asp:RegularExpressionValidator>
+                        <asp:RegularExpressionValidator ID="regexAge" ValidationGroup="addmed" runat="server" ControlToValidate="txt_qtd" ValidationExpression="^[0-9]{1,4}$" ErrorMessage="Invalid Age" Text="*"></asp:RegularExpressionValidator>
                     </td>  
                 </tr>   
                 <tr>

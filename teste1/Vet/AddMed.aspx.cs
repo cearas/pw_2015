@@ -32,7 +32,7 @@ public partial class Vet_AddMed : System.Web.UI.Page
 
         txt_name.Text = "";
         txt_qtd.Text = "";
-
+        Response.Redirect("~/Vet/ViewMeds.aspx");
     }
     protected void CleanButton_Click(object sender, EventArgs e)
     {
