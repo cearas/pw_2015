@@ -39,11 +39,13 @@
         <%--THE SQL DATA SOURCE CONNECTED WITH THE GRIDVIEW--%>
        <asp:SqlDataSource ID="pet" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>"
             SelectCommand="SELECT [pet_name ] AS pet_name_, [pet_age], [pet_race], [pet_gender], [pet_photo] FROM [Pet]"
-            UpdateCommand="UPDATE Pet SET pet_age = @Pet_Age, pet_race = @Pet_Race, pet_gender = @Pet_Gender, [pet_name ] = @Pet_Name"
+            UpdateCommand="UPDATE Pet SET pet_age = @Pet_Age, pet_race = @Pet_Race, pet_gender = @Pet_Gender, [pet_name ] = @Pet_Name WHERE [id_pet] = @id_pet"
             DeleteCommand="DELETE FROM Pet WHERE id_pet = @id_pet"
             InsertCommand="INSERT INTO [Pet] ([pet_name], [pet_age], [pet_race], [pet_gender], [pet_photo]) VALUES (@Pet_Name, @Pet_Age, @Pet_Race, @Pet_Gender, @Pet_Photo)">
            
            <UpdateParameters>
+                <asp:Parameter Name="Id_Pet" /> 
+                <asp:Parameter Name="Pet_Age" />
                 <asp:Parameter Name="Pet_Age" />
                 <asp:Parameter Name="Pet_Race" />
                 <asp:Parameter Name="Pet_Gender" />
