@@ -32,7 +32,7 @@
                  <asp:BoundField DataField="pet_race" HeaderText=" Breed " SortExpression="pet_race" />  
                  <asp:BoundField DataField="pet_gender" HeaderText=" Gender " SortExpression="pet_gender" />
                  <asp:BoundField DataField="pet_photo" Visible="false" HeaderText="pet_photo" SortExpression="pet_photo" />
-                 <asp:BoundField DataField="user_name" Visible="true" HeaderText=" Dono " SortExpression="user_name" />
+                 <asp:BoundField DataField="user_name" Visible="true" HeaderText=" Dono "  SortExpression="user_name" />
                   
 
                             

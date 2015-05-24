@@ -7,7 +7,7 @@
             AutoGenerateColumns="False" 
             AutoGenerateEditButton="True" 
             DataSourceID="pet"
-            runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AllowPaging="True" DataKeyNames="DrawingID" >
+            runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AllowPaging="True">
             
             <AlternatingRowStyle BackColor="White" />
             
