@@ -15,7 +15,7 @@
             <table style="width:100%"><tr><td style="background-color:orange;text-align:center">
                 <asp:LoginStatus ID="LoginStatus1" runat="server" Font-Overline="false" ForeColor="Black"/>
                 <asp:LoginName ID="LoginName1" runat="server" />
-                                          </td></tr></table>
+            </td></tr></table>
             <asp:ContentPlaceHolder id="HEAD" runat="server">
             </asp:ContentPlaceHolder>
             <asp:ContentPlaceHolder id="Main" runat="server">

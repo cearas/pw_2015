@@ -2,63 +2,48 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
-                   
-                        <div class="col-md-3">
-                            <div class="box box-primary">
-                                <div class="box-header">
-                                    <h4 class="box-title">Draggable Events</h4>
-                                </div>
-                                <div class="box-body">
-                                    <!-- the events -->
-                                    <div id='external-events'>                                        
-                                        <div class='external-event bg-green'>Lunch</div>
-                                        <div class='external-event bg-red'>Go home</div>
-                                        <div class='external-event bg-aqua'>Do homework</div>
-                                        <div class='external-event bg-yellow'>Work on UI design</div>
-                                        <div class='external-event bg-navy'>Sleep tight</div>
-                                        <p>
-                                            <input type='checkbox' id='drop-remove' /> <label for='drop-remove'>remove after drop</label>
-                                        </p>
-                                    </div>
-                                </div><!-- /.box-body -->
-                            </div><!-- /. box -->
-                            <div class="box box-primary">
-                                <div class="box-header">
-                                    <h3 class="box-title">Create Event</h3>
-                                </div>
-                                <div class="box-body">
-                                    <div class="btn-group" style="width: 100%; margin-bottom: 10px;">
-                                        <button type="button" id="color-chooser-btn" class="btn btn-danger btn-block btn-sm dropdown-toggle" data-toggle="dropdown">Color <span class="caret"></span></button>
-                                        <ul class="dropdown-menu" id="color-chooser">
-                                            <li><a class="text-green" href="#"><i class="fa fa-square"></i> Green</a></li>
-                                            <li><a class="text-blue" href="#"><i class="fa fa-square"></i> Blue</a></li>                                            
-                                            <li><a class="text-navy" href="#"><i class="fa fa-square"></i> Navy</a></li>                                            
-                                            <li><a class="text-yellow" href="#"><i class="fa fa-square"></i> Yellow</a></li>
-                                            <li><a class="text-orange" href="#"><i class="fa fa-square"></i> Orange</a></li>
-                                            <li><a class="text-aqua" href="#"><i class="fa fa-square"></i> Aqua</a></li>
-                                            <li><a class="text-red" href="#"><i class="fa fa-square"></i> Red</a></li>
-                                            <li><a class="text-fuchsia" href="#"><i class="fa fa-square"></i> Fuchsia</a></li>
-                                            <li><a class="text-purple" href="#"><i class="fa fa-square"></i> Purple</a></li>
-                                        </ul>
-                                    </div><!-- /btn-group -->
-                                    <div class="input-group">                                          
-                                        <input id="new-event" type="text" class="form-control" placeholder="Event Title" \>
-                                        <div class="input-group-btn">
-                                            <button id="add-new-event" type="button" class="btn btn-default btn-flat">Add</button>
-                                        </div><!-- /btn-group -->
-                                    </div><!-- /input-group -->
-                                </div>
-                            </div>
-                        </div><!-- /.col -->
-                        <div class="col-md-9">
-                            <div class="box box-primary">                                
-                                <div class="box-body no-padding">
-                                    <!-- THE CALENDAR -->
-                                    <div id="calendar"></div>
-                                </div><!-- /.box-body -->
-                            </div><!-- /. box -->
-                        </div><!-- /.col -->
+    <h2 style="color:#424242">Manage Tasks</h2>
+    <br />
 
+    <asp:GridView 
+            ID="gv" Font-Names="Arial" Font-Size="Smaller"  AutoGenerateSelectButton="True"
+            AutoGenerateColumns="False" 
+            AutoGenerateEditButton="True" 
+            DataSourceID="pet"
+            runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AllowPaging="True" OnSelectedIndexChanging="gv_SelectedIndexChanging" DataKeyNames="id_pet">
+            
+            <AlternatingRowStyle BackColor="White" />
+            
+            <Columns>
+                <asp:CommandField ShowDeleteButton="True" />
+                <asp:TemplateField> 
+                    <ItemTemplate>
+                        <asp:LinkButton ID="insert_comment" runat="server" OnClick="insert_comment" CommandName="Insert">Insert</asp:LinkButton>
+                    </ItemTemplate>
+                </asp:TemplateField>
+            
+                <%--DATA BOUND COLUMNS--%>
+                 
+                 <asp:BoundField DataField="id_pet" HeaderText="id_pet" Visible="false" SortExpression="id_pet" InsertVisible="False" ReadOnly="True"  />
+                 <asp:BoundField DataField="pet_name" HeaderText=" Name " SortExpression="pet_name" />
+                 <asp:BoundField DataField="pet_age" HeaderText=" Age " SortExpression="pet_age" />
+                 <asp:BoundField DataField="pet_race" HeaderText=" Breed " SortExpression="pet_race" />  
+                 <asp:BoundField DataField="pet_gender" HeaderText=" Gender " SortExpression="pet_gender" />
+                 <asp:BoundField DataField="pet_photo" Visible="false" HeaderText="pet_photo" SortExpression="pet_photo" />
+                 <asp:BoundField DataField="user_name" Visible="true" HeaderText=" Dono " ReadOnly="True"  SortExpression="user_name" />
+                               
+            </Columns>
+            <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+            <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+            <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
+            <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
+            <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="Navy" />
+            <SortedAscendingCellStyle BackColor="#FDF5AC" />
+            <SortedAscendingHeaderStyle BackColor="#4D0000" />
+            <SortedDescendingCellStyle BackColor="#FCF6C0" />
+            <SortedDescendingHeaderStyle BackColor="#820000" />
+        </asp:GridView>
+    
 
     
 

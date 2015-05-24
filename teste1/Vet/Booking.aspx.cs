@@ -131,6 +131,7 @@ public partial class Vet_Booking : System.Web.UI.Page
         else
             lbl.Text = "Tem de inserir um animal!";
 
+        Response.Redirect("~/Vet/Booking.aspx");
     }
 
     protected void droplist_type_SelectedIndexChanged(object sender, EventArgs e)
