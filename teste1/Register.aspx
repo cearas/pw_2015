@@ -26,6 +26,7 @@
         <section id="special">
             
             <h2 style="color:#424242">Register</h2>
+            <asp:Label ID="InvalidCredentialMessage" runat="server" Text="Username already exists! Try another one!" Visible="false"></asp:Label>
             <br />
             <asp:ValidationSummary ID="validation_register" runat="server" ValidationGroup="register"/>
             <table>

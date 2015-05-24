@@ -29,11 +29,13 @@
             </tr>
             <tr>
                 <td><asp:Label ID="Label2" runat="server" Text="Password"></asp:Label></td>
-                <td><asp:TextBox ID="pw" runat="server"></asp:TextBox></td>
+                <td><asp:TextBox ID="pw" TextMode="Password"  runat="server"></asp:TextBox></td>
                 <td><asp:Button ID="log" runat="server" Text="Login" OnClick="log_Click" /></td>
             </tr>
             </table>
             <asp:HyperLink ID="HyperLinkRegister" runat="server" NavigateUrl="~/Register.aspx">Don't have an acount? please register.</asp:HyperLink>
+            <br />
+            <asp:Label ID="InvalidCredentialMessage" runat="server" Text="Password or username invalid!" Visible="false"></asp:Label>
         </section>
     </section>
 
