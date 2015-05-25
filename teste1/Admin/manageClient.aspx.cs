@@ -11,7 +11,7 @@ public partial class Admin_manageClient : System.Web.UI.Page
     {
 
     }
-    protected void insert_client(object sender, EventArgs e)
+    protected void insert_vet(object sender, EventArgs e)
     {
         Response.Redirect("insertClient.aspx");
     }
