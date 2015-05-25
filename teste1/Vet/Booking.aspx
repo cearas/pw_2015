@@ -6,7 +6,7 @@
             
             <h2 style="color:#424242">Booking</h2>
             <asp:ValidationSummary ID="ValidationSummary1" runat="server" />
-            <asp:Label ID="lbl" runat="server" Text="Label"></asp:Label>
+            <asp:Label ID="lbl" runat="server" Text=""></asp:Label>
             <br />
             <table>
                 <tr>

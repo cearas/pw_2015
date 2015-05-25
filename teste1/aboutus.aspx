@@ -24,7 +24,14 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Main" Runat="Server">
     <div class="wrapper1">
-        
+        <section id="main">
+        <section id="one">
+            <h2 style="color:#424242">About us:</h2> <br />
+            <ul>
+                <li>The MobilVet is a Veterinary Service. Its main idea the movement of veterinarians to the household instead of customers to travel to the clinic , saving them time , trouble and money. </li>
+            </ul>    
+        </section>
+    </section>
     </div>
 </asp:Content>
 

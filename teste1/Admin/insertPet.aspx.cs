@@ -23,10 +23,9 @@ public partial class Admin_insertPet : System.Web.UI.Page
 
         DataTable users = new DataTable();
         SqlConnection cnn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
-        String query = "SELECT user_name FROM [User]";
+        String query = "SELECT user_name, id_user FROM [User]";
 
         SqlCommand cmd = new SqlCommand(query);
-        //cmd.Parameters.AddWithValue("@user_id", iduser);
 
         cmd.Connection = cnn;
         SqlDataAdapter da = new SqlDataAdapter(cmd);

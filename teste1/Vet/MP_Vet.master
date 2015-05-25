@@ -8,15 +8,12 @@
     <link href="../css/styles.css" rel="stylesheet" />
     <script src="../js/jquery-1.11.1.min.js"></script>
 	<script src="../js/bootstrap.min.js"></script>
-<<<<<<< HEAD
-    
-    
-=======
+
      <!-- fullCalendar -->
     <link href="../css/fullcalendar/fullcalendar.css" rel="stylesheet" type="text/css" />
     <link href="../css/fullcalendar/fullcalendar.print.css" rel="stylesheet" type="text/css" media='print' />
      
->>>>>>> 54a94b1061b9f3fc748f7e2096cb4e6121277dac
+
     <title>Dashboard Vet</title>
 </head>
 <body>
@@ -33,10 +30,8 @@
                 <li><a href="Booking.aspx"><span class="glyphicon glyphicon-info-sign"></span> Bookings</a></li>
 			    <li><a href="ViewMeds.aspx"><span class="glyphicon glyphicon-stats"></span> Manage Meds</a></li>
 			    <li><a href="ViewPets.aspx"><span class="glyphicon glyphicon-list-alt"></span> Manage Pets</a></li>
-<<<<<<< HEAD
                 <li></li>
-=======
->>>>>>> 54a94b1061b9f3fc748f7e2096cb4e6121277dac
+
 		    </ul>
         </div>
     <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">			
@@ -226,6 +221,6 @@
             });
         });
         </script>
->>>>>>> 54a94b1061b9f3fc748f7e2096cb4e6121277dac
+
 </body>
 </html>

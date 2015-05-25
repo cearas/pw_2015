@@ -23,7 +23,7 @@ public partial class Vet_Booking : System.Web.UI.Page
     {
         
             int iduser = Convert.ToInt32(droplist_users.SelectedValue);
-            lbl.Text = iduser.ToString();
+           
             DataTable pets = new DataTable();
             SqlConnection cnn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
             String query = "SELECT id_pet,pet_name FROM Pet WHERE id_user=@user_id";

@@ -82,17 +82,17 @@
         
         <%--THE SQL DATA SOURCE CONNECTED WITH THE GRIDVIEW--%>
        <asp:SqlDataSource ID="pet" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>"
-            SelectCommand="SELECT [id_pet], [pet_name ] AS pet_name_, [pet_age], [pet_race], [pet_gender], [pet_photo] FROM [Pet]"
-            UpdateCommand="UPDATE [Pet] SET [pet_name ] = @pet_name_, [pet_age] = @pet_age, [pet_race] = @pet_race, [pet_gender] = @pet_gender, [pet_photo] = @pet_photo WHERE [id_pet] = @id_pet"
+            SelectCommand="SELECT [id_pet], [pet_name ] AS pet_name_, [pet_age], [pet_race], [pet_gender] FROM [Pet] WHERE [id_user] = @id_user"
+            UpdateCommand="UPDATE [Pet] SET [pet_name ] = @pet_name_, [pet_age] = @pet_age, [pet_race] = @pet_race, [pet_gender] = @pet_gender WHERE [id_pet] = @id_pet"
             DeleteCommand="DELETE FROM [Pet] WHERE [id_pet] = @id_pet"
-            InsertCommand="INSERT INTO [Pet] ([pet_name ], [pet_age], [pet_race], [pet_gender], [pet_photo]) VALUES (@pet_name_, @pet_age, @pet_race, @pet_gender, @pet_photo)">
+            InsertCommand="INSERT INTO [Pet] ([pet_name ], [pet_age], [pet_race], [pet_gender]) VALUES (@pet_name_, @pet_age, @pet_race, @pet_gender )">
            
            <UpdateParameters>
                 <asp:Parameter Name="pet_name_" Type="String" />
                 <asp:Parameter Name="pet_age" Type="String" />
                 <asp:Parameter Name="pet_race" Type="String" />
                 <asp:Parameter Name="pet_gender" Type="String" />
-                <asp:Parameter Name="pet_photo" Type="Object" /> 
+                 
                 <asp:Parameter Name="id_pet" Type="Int32" />
             </UpdateParameters>
             
@@ -105,7 +105,7 @@
                 <asp:Parameter Name="pet_age" Type="String" />
                 <asp:Parameter Name="pet_race" Type="String" />
                 <asp:Parameter Name="pet_gender" Type="String" />
-                <asp:Parameter Name="pet_photo" Type="Object" />
+                
             </InsertParameters>
 
         

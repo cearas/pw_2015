@@ -10,18 +10,12 @@
             AutoGenerateColumns="False" 
             AutoGenerateEditButton="True" 
             DataSourceID="SqlDataSource1"
-            runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AllowPaging="True" DataKeyNames="Id_apoint">
+            runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanging="gv_SelectedIndexChanging" AllowPaging="True" DataKeyNames="Id_apoint">
             
             <AlternatingRowStyle BackColor="White" />
             
             <Columns>
 
-                <asp:CommandField ShowDeleteButton="True" />
-                <asp:TemplateField> 
-                    <ItemTemplate>
-                        <asp:LinkButton ID="insert_comments" runat="server" OnClick="insert_comments" CommandName="Insert">Insert Comment</asp:LinkButton>
-                    </ItemTemplate>
-                </asp:TemplateField>
             
                 <%--DATA BOUND COLUMNS--%>
                  
@@ -50,6 +44,51 @@
             <SortedDescendingCellStyle BackColor="#FCF6C0" />
             <SortedDescendingHeaderStyle BackColor="#820000" />
         </asp:GridView>
+
+            <asp:Label ID="Label5" runat="server" Visible="false" Text="Date: "></asp:Label>
+            <asp:Label ID="lbl_date" runat="server" Visible="false" Text="Label"></asp:Label><br />
+            <asp:Label ID="Label1" runat="server" Visible="false" Text="Subject: "></asp:Label>
+            <asp:Label ID="lbl_subject" runat="server" Visible="false" Text="Label"></asp:Label><br />
+            <asp:Label ID="Label2" runat="server" Visible="false" Text="Type: "></asp:Label>
+            <asp:Label ID="lbl_type" runat="server" Visible="false" Text="Label"></asp:Label><br />
+            <asp:Label ID="Label3" runat="server" Visible="false" Text="Specialty: "></asp:Label>
+            <asp:Label ID="lbl_specialty" runat="server" Visible="false" Text="Label"></asp:Label><br />
+            <asp:Label ID="Label4" runat="server" Visible="false" Text="Hour: "></asp:Label>
+            <asp:Label ID="lbl_hour" runat="server" Visible="false" Text="Label"></asp:Label><br />
+            <asp:Label ID="lbl_idpet" runat="server" Visible="false" Text=""></asp:Label>
+            <asp:Label ID="lbl_idvet" runat="server" Visible="false" Text=""></asp:Label><br />
+            <asp:Label ID="lbl_iduser" runat="server" Visible="false" Text=""></asp:Label>
+            
+        
+        <br />
+            <table>
+                <tr>
+                    <td><asp:Label ID="Label6" runat="server" Text="Review: "></asp:Label></td>
+                    <td><asp:TextBox ID="txt_review" runat="server"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="reqName" ValidationGroup="addmed" ControlToValidate="txt_review" runat="server" ErrorMessage="Please enter your name!" Text="*"></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="regexpName" ValidationGroup="addmed" runat="server" ControlToValidate="txt_review" ValidationExpression="^[a-zA-Z'.\s]{3,40}$" ErrorMessage="Invalid Name" Text="*"></asp:RegularExpressionValidator>
+                    </td>
+                </tr>
+  
+                <tr>
+                    <asp:DropDownList ID="droplist_status" AutoPostBack="true" runat="server" >
+                            <asp:ListItem Text="Select status" Value="0"></asp:ListItem>
+                             <asp:ListItem Text="Active" Value="1"></asp:ListItem>
+                             <asp:ListItem Text="Conclude" Value="2"></asp:ListItem>
+                        </asp:DropDownList>
+                </tr>  
+                                <tr>
+                    <asp:DropDownList ID="droplist_med" AutoPostBack="true" runat="server">
+                        </asp:DropDownList>
+                </tr> 
+                 
+                <tr>
+                    <td><asp:Button ID="CleanButton" runat="server" Text="Limpar" OnClick="CleanButton_Click" /></td>
+                    <td><asp:Button ID="AcceptButton" ValidationGroup="addmed" CausesValidation="true" runat="server" Text="Concluir" OnClick="AcceptButton_Click" /></td>
+                </tr>
+            
+            </table>
+            
     
 
     

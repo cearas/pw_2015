@@ -18,7 +18,7 @@ public partial class Client_ViewPets : System.Web.UI.Page
         }
         if (!IsPostBack)
         {
-            pet.SelectParameters.Add("user_id", get_UserID().ToString());
+            pet.SelectParameters.Add("id_user", get_UserID().ToString());
         }
     }
 
