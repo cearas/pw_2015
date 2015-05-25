@@ -9,7 +9,9 @@
 							<asp:Image ID="Image2" ImageUrl="~/images/vet.gif" runat="server" />
 						</div>
 						<div class="col-sm-9 col-lg-7 widget-right">
-							<div class="text-muted">Insert Vets</div>
+							<div class="text-muted">
+                                <asp:HyperLink ID="HyperLink4" NavigateUrl="~/Admin/insertVet.aspx" runat="server">Insert Vet</asp:HyperLink>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -21,7 +23,9 @@
                             <asp:Image ID="Image1" ImageUrl="~/images/user.gif" runat="server" />
 						</div>
 						<div class="col-sm-9 col-lg-7 widget-right">
-							<div class="text-muted">Insert Users</div>
+							<div class="text-muted">
+                                <asp:HyperLink ID="HyperLink3" NavigateUrl="~/Admin/insertClient.aspx" runat="server">Insert Users</asp:HyperLink>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -33,7 +37,9 @@
 							<asp:Image ID="Image3" ImageUrl="~/images/app.gif" runat="server" />
 						</div>
 						<div class="col-sm-9 col-lg-7 widget-right">
-							<div class="text-muted">View Appointments</div>
+							<div class="text-muted">
+                                <asp:HyperLink ID="HyperLink2" NavigateUrl="~/Admin/manageApoints.aspx" runat="server">View Appointment</asp:HyperLink>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -45,7 +51,9 @@
 							<asp:Image ID="Image4" ImageUrl="~/images/pet.gif" runat="server" />
 						</div>
 						<div class="col-sm-9 col-lg-7 widget-right">
-							<div class="text-muted">Insert Pet</div>
+							<div class="text-muted">
+                                <asp:HyperLink ID="HyperLink1" NavigateUrl="~/Admin/insertPet.aspx" runat="server">Insert Pet</asp:HyperLink>
+							</div>
 						</div>
 					</div>
 				</div>
