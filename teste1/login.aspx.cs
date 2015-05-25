@@ -43,8 +43,12 @@ public partial class login : System.Web.UI.Page
         DataTable dt = new DataTable();
         da.Fill(dt);
 
-        if (dt.Rows.Count > 0)
+        if (dt.Rows.Count > 0 && user.Text.Equals("admin"))
+        {
             FormsAuthentication.RedirectFromLoginPage(user.Text, false);
+            cnn.Close();
+            Response.Redirect("~/Admin/Default.aspx");
+        }
 
         else if (dt.Rows.Count == 0)
         {
@@ -72,10 +76,15 @@ public partial class login : System.Web.UI.Page
             }
 
         }
+        else
+        {
+            FormsAuthentication.RedirectFromLoginPage(user.Text, false);
+            cnn.Close();
+        }
 
-        
+        cnn.Close();
             
-       // cnn.Close();
+       
 
 
     }
