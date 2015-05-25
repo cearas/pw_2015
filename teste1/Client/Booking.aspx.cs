@@ -81,7 +81,7 @@ public partial class Client_Booking : System.Web.UI.Page
                     DateTime dtUserDate;
                     dtUserDate = calendar_appoint.SelectedDate;
                     SqlConnection cnn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
-                    String query = "Insert into apoint ([apoint_date], apoint_subject, apoint_type, apoint_specialty, apoint_hour, id_pet, user_id) VALUES (@date, @subject, @type, @specialty,@hour,@pet,@user_id)";
+                    String query = "Insert into apoint ([apoint_date], apoint_subject, apoint_type, apoint_specialty, apoint_hour, id_pet, id_user) VALUES (@date, @subject, @type, @specialty,@hour,@pet,@user_id)";
 
                     SqlCommand cmd = new SqlCommand(query);
                     cmd.Connection = cnn;

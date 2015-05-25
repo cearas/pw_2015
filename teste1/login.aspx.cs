@@ -49,6 +49,12 @@ public partial class login : System.Web.UI.Page
             cnn.Close();
             Response.Redirect("~/Admin/Default.aspx");
         }
+        else if (dt.Rows.Count > 0)
+        {
+            FormsAuthentication.RedirectFromLoginPage(user.Text, false);
+            cnn2.Close();
+            Response.Redirect("~/Client/Default.aspx");
+        }
 
         else if (dt.Rows.Count == 0)
         {
@@ -75,11 +81,6 @@ public partial class login : System.Web.UI.Page
                 Response.Redirect("~/Vet/Default.aspx");
             }
 
-        }
-        else
-        {
-            FormsAuthentication.RedirectFromLoginPage(user.Text, false);
-            cnn.Close();
         }
 
         cnn.Close();
