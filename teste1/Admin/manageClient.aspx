@@ -12,6 +12,7 @@
                         <asp:LinkButton ID="insert_client" runat="server" OnClick="insert_client" CommandName="Insert">Insert</asp:LinkButton>
                     </ItemTemplate>
                 </asp:TemplateField>
+
             <asp:CommandField ShowDeleteButton="True" />
             <asp:BoundField DataField="id_user" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="id_user" />
             <asp:BoundField DataField="user_name" HeaderText="Name" SortExpression="user_name" />
