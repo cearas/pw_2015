@@ -44,7 +44,8 @@
             <SortedAscendingHeaderStyle BackColor="#4D0000" />
             <SortedDescendingCellStyle BackColor="#FCF6C0" />
             <SortedDescendingHeaderStyle BackColor="#820000" />
-        </asp:GridView>
+        
+            </asp:GridView>
             <asp:Label ID="Label5" runat="server" Visible="false" Text="Photo: "></asp:Label>
             <asp:Image ID="img_pet" runat="server" Visible="false" ImageUrl="GetImage.ashx?id=12345" Height="150px" Width="165px" /><br />
             <asp:Label ID="Label1" runat="server" Visible="false" Text="Name: "></asp:Label>

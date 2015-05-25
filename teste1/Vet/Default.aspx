@@ -16,6 +16,12 @@
             
             <Columns>
 
+                <asp:CommandField ShowDeleteButton="True" />
+                <asp:TemplateField> 
+                    <ItemTemplate>
+                        <asp:LinkButton ID="insert_comments" runat="server" OnClick="insert_comments" CommandName="Insert">Insert Comment</asp:LinkButton>
+                    </ItemTemplate>
+                </asp:TemplateField>
             
                 <%--DATA BOUND COLUMNS--%>
                  
@@ -33,6 +39,8 @@
                 <asp:BoundField DataField="id_user" HeaderText="Id user" SortExpression="id_user" />
                                
             </Columns>
+
+
             
            
 
