@@ -32,7 +32,7 @@
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
         SelectCommand="SELECT [id_vet], [vet_name], [vet_phone], [vet_district], [vet_specialties], [vet_mail] FROM [Vet] ORDER BY [id_vet]"
         UpdateCommand="UPDATE [Vet] SET [vet_name]=@vet_name, [vet_phone] = @vet_phone, [vet_district] = @vet_district, [vet_specialties] = @vet_specialties, [vet_mail] = @vet_mail WHERE id_vet=@id_vet"
-        DeleteCommand="DELETE FROM [User] WHERE id_user = @id_user">
+        DeleteCommand="DELETE FROM [User] WHERE id_vet = @id_vet">
            
            <UpdateParameters>
                <asp:Parameter Name="id_vet" Type="String" />

@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Data;
 using System.Configuration;
+using System.Text;
 
 public partial class Admin_insertVet : System.Web.UI.Page
 {
@@ -22,8 +23,16 @@ public partial class Admin_insertVet : System.Web.UI.Page
                .Where(li => li.Selected)
                .Select(li => li.Value)
                .ToList();
+
+            StringBuilder builder = new StringBuilder();
+            foreach (string value in selectedValues) // Loop through all strings
+            {
+                builder.Append(value).Append("|"); // Append string to StringBuilder
+            }
+            string result = builder.ToString(); // Get string from StringBuilder
+
             SqlConnection cnn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
-            String query = "Insert into [Vet] (vet_name, vet_pw, vet_district, vet_phone, vet_mail, vet_specialties) VALUES (@username, @password, @district,@phone,@address,@email,@specialties) ";
+            String query = "Insert into [Vet] (vet_name, vet_pw, vet_district, vet_phone, vet_mail, vet_specialties) VALUES (@username, @password, @district,@phone,@email,@specialties) ";
 
             SqlCommand cmd = new SqlCommand(query);
             cmd.Connection = cnn;
@@ -33,7 +42,7 @@ public partial class Admin_insertVet : System.Web.UI.Page
             cmd.Parameters.AddWithValue("@district", txt_district.Text);
             cmd.Parameters.AddWithValue("@phone", txt_phone.Text);
             cmd.Parameters.AddWithValue("@email", txt_email.Text);
-            cmd.Parameters.AddWithValue("@specialties", selectedValues);
+            cmd.Parameters.AddWithValue("@specialties", result);
 
             cnn.Open();
             int n = cmd.ExecuteNonQuery();

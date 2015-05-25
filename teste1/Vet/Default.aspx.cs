@@ -11,4 +11,9 @@ public partial class Vet_Default : System.Web.UI.Page
     {
 
     }
+
+    protected void insert_comments(object sender, EventArgs e)
+    {
+        Response.Redirect("~/Vet/AddComments.aspx");
+    }
 }
